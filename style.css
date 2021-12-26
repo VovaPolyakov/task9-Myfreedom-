@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-size: 100%;
+    transition: 0.5s;
+}
+
+.container{
+    width: 1000px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.img__nav{
+    padding: 20px;
+    background: rgba(41, 39, 39, 0.301);
+    display: flex;
+
+}
+.img{
+    display: flex;
+    justify-content: space-between;
+}
+.img img{ 
+    width: 30%;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+.img img:hover{
+    transform:scale(1.05);
+}
+
+.active{
+}
