@@ -94,18 +94,23 @@
 //Задание 3
 
 
-// let imgs = document.querySelectorAll('img');
-// let body = document.querySelector('body')
-
-// imgs.forEach((img, index) => {
-//     img.addEventListener('click', function (event) {
-//         for (let img of imgs) {
-//             if (img != event.target) {
-//                 img.classList.remove('active');
-//             }
-//         }
-//         img.classList.add("active");
-//         let src = img.getAttribute('src');
-//         body.style.backgroundImage = `url(${src})`;
-//     });
-// });
+let imgs = document.querySelectorAll('img');
+let body = document.querySelector('body')
+let imgSrc = [];
+if (localStorage.imgSrc) {
+    imgSrc = localStorage.imgSrc;
+    body.style.backgroundImage = `url(${imgSrc})`;
+}
+imgs.forEach((img, index) => {
+    img.addEventListener('click', function (event) {
+        for (let img of imgs) {
+            if (img != event.target) {
+                img.classList.remove('active');
+            }
+        }
+        img.classList.add("active");
+        let src = img.getAttribute('src');
+        localStorage.imgSrc = src;
+        body.style.backgroundImage = `url(${src})`;
+    });
+});
